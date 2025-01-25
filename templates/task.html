@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}Task{% endblock title %}
+
+{% block body %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">s.no</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{ task.Title }}</td>
+            <td>{{ task.Description }}</td>
+            <td>
+                {% if task.status %}
+                <span class="text-success">Completed</span>
+                {% else %}
+                <span class="text-danger">pending</span>
+                {% endif %}
+            </td>
+            <td>
+                <button class="btn btn-success">mark</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock body %}
