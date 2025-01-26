@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Task{% endblock title %}
+{% block title %}Task List{% endblock %}
 
 {% block body %}
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">s.no</th>
+            <th scope="col">S.No</th>
             <th scope="col">Title</th>
             <th scope="col">Description</th>
             <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -27,11 +27,14 @@
                 {% endif %}
             </td>
             <td>
-                <!-- Update the link to call the correct update URL with the task pk -->
-                <a href="{% url 'task' pk=task.pk %}" class="btn btn-success">Mark</a>
+                <!-- Edit button linking to the edit page for the current task -->
+                <a href="{% url 'edit_task' pk=task.pk %}" class="btn btn-warning">Edit</a>
+
+                <!-- Delete button linking to the delete view for the current task -->
+                <a href="{% url 'delete_task' pk=task.pk %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this task?')">Delete</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-{% endblock body %}
+{% endblock %}
