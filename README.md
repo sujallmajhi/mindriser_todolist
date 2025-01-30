@@ -1,6 +1,6 @@
 To-Do List Web Application
 Welcome to my To-Do List web application! This project was my first Django-based application, developed as part of my learning journey. The app is designed to help users manage their tasks by allowing them to add, edit, and delete tasks.
-
+** soon search will be also added***
 Features
 Create Tasks 📝: Add a new task with a title, description, and status.
 Edit Tasks ✏️: Modify the title, description, and status of any existing task.
